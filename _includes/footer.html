@@ -1,0 +1,32 @@
+<footer class="footer-distributed">
+  <div class="container">
+    <div class="footer">
+
+      <h3>{{ site.title }}</h3>
+
+      <p>{{ site.description }}</p>
+
+      <ul class="social-media">
+        <li>
+          <a title="{{ site.title }} en Github" href="https://github.com/{{ site.github_username }}" target="_blank"><i class="fa fa-github fa-2x"></i></a>
+        </li>
+
+        <li>
+          <a title="{{ site.title }} en Facebook" href="https://facebook.com/groups/lugfi" target="_blank"><i class="fa fa-facebook fa-2x"></i></a>
+        </li>
+
+        <li>
+          <a title="{{ site.title }} en Telegram" href="https://telegram.me/joinchat/AHsQQT-zSbFrpCbq09ojpw" target="_blank"><i class="fa fa-paper-plane fa-2x"></i></a>
+        </li>
+
+        <li>
+          <a title="{{ site.title }} RSS" href="{{ '/feed.xml' | prepend: site.baseurl }}" target="_blank"><i class="fa fa-rss fa-2x"></i></a>
+        </li>
+      </ul>
+
+      <div class="license">
+        <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licencia Creative Commons" style="border-width:0; width:150px" src="{{ '/images/license-by-sa.png' | prepend: site.baseurl }}" /></a>
+      </div>
+    </div>
+  </div>
+</footer>

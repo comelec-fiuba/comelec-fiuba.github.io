@@ -1,0 +1,50 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme-color" content="#222222">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  {% capture page_title %}{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}{% endcapture %}
+  {% capture page_description %}{% if page.description %}{{ page.description }}{% elsif page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}{% endcapture %}
+  {% capture page_image %}{% if page.image %}{{ page.image }}{% else %}{{ site.image }}{% endif %}{% endcapture %}
+  {% capture page_url %}{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}{% endcapture %}
+
+  <title>{{ page_title }}</title>
+  <meta name="description" content="{{ page_description }}">
+  <link rel="canonical" href="{{ page_url }}">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ '/feed.xml' | prepend: site.baseurl | prepend: site.url }}">
+
+  <!-- Start Icons Settings -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/favicons/favicon-194x194.png" sizes="194x194">
+  <link rel="icon" type="image/png" href="/favicons/android-chrome-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/favicons/manifest.json">
+  <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="/favicons/favicon.ico">
+  <meta name="apple-mobile-web-app-title" content="LUGFI">
+  <meta name="application-name" content="LUGFI">
+  <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+  <!-- End Icons Settings -->
+
+  <script src="{{ '/js/jquery.min.js' | prepend: site.baseurl }}"></script>
+  <script src="{{ '/js/bootstrap.min.js' | prepend: site.baseurl }}"></script>
+  <script src="{{ '/js/header.js' | prepend: site.baseurl }}"></script>
+  <script src="{{ '/js/toc.js' | prepend: site.baseurl }}"></script>
+
+  <link rel="stylesheet" href="{{ '/css/bootstrap.min.css' | prepend: site.baseurl }}">
+  <link rel="stylesheet" href="{{ '/css/main.css' | prepend: site.baseurl }}">
+  <link rel="stylesheet" href="{{ '/css/font-awesome/css/font-awesome.min.css' | prepend: site.baseurl }}">
+
+  <!-- Open Graph -->
+  {% capture og_type %}{% if page.title %}article{% else %}website{% endif %}{% endcapture %}
+  <meta property="og:type" content="{{ og_type }}">
+  <meta property="og:title" content="{{ page_title }}">
+  <meta property="og:description" content="{{ page_description }}">
+  <meta property="og:url" content="{{ page_url }}">
+  <meta property="og:image" content="{{ page_image | prepend: site.baseurl | prepend: site.url }}">
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary">
+</head>
