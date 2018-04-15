@@ -1,4 +1,11 @@
-# Sitio web LUGFI
+# Sitio web ComElec
+
+En construcción
+---
+
+(Fue clonado del sitio del LugFI)
+
+---
 
 Repositorio del sitio y blog del LUGFI, que es alojado en
 [https://lugfi.github.io](https://lugfi.github.io).
